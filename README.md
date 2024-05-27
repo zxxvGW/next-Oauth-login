@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#### 一个 Nextjs 学习项目
 
-## Getting Started
+- 使用 next-auth 库实现 Github、Google 平台授权登录和账号密码登录。
+- 支持注册邮箱发送一条激活当前账号的邮件，邮件中有一个链接，用户点击链接可以激活邮箱。
+- 中间件实现登录验证，用户没有登录的情况下，访问/user 页面时系统给重定向到登录页面。
 
-First, run the development server:
+.env 案例
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```js
+# github
+AUTH_GITHUB_ID=xxx
+AUTH_GITHUB_SECRET=xxxx
+AUTH_SECRET=xxx
+
+# google
+GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=xxxx
+
+
+# DB
+DATABASE_URL="mysql://root:root@localhost:3306/next-auth"
+
+# email
+
+MAIL_HOST=smtp.qq.com
+MAIL_PORT=465
+MAIL_USER=xxxx@qq.com
+MAIL_PASS=xxxx
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
